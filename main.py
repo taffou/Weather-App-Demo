@@ -1,3 +1,9 @@
+# ? - importing necessary modules
+
+import welcome_msg as wmsg
+import fetch_data as fd
+# import subprocess as sup
+
 # Formatting Variables
 
 format_output = "\033[47m\033[30m"
@@ -6,11 +12,6 @@ format_reset = "\033[0m"
 # Formatted Message - Signify Start of Output
 print(f"{format_output}---START---{format_reset}")
 
-# ? - importing necessary modules
-
-import welcome_msg as wmsg
-import fetch_data as fd
-# import subprocess as sup
 
 def main():
 # ? 1- Welcome message
