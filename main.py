@@ -14,11 +14,8 @@ import messages as msg
 def main():
     fd.weather_info()
     try:
-        # ? 1.1- Welcome message     
-        print("...........................................++++++..............................................")
-        # ? 1.2- Welcome message
+        # ? 1.1- Welcome message 
         msg.welcome()
-        print("...........................................++++++..............................................")
         while True:
             # ? 1.3- Fetching Weather Data 
             city = input("Enter a city name!")
@@ -27,12 +24,9 @@ def main():
             while isCity == False:
                 city = input("Enter a valid city name!")
                 isCity = fd.weather_city(city.title())
-            print("...........................................++++++..............................................")
             user_input = input("Press Any key to continue or \"E\" to exit the App")
-            print("....................++++++.....................")
             if user_input.capitalize() == "E":
                 msg.goodbye()
-                print("...........................................++++++..............................................")
                 break
     except Exception as e:
         print(f"An error occured: {e}")
@@ -40,7 +34,6 @@ def main():
         print("Accurate App")
     finally: 
         print("Reload...")
-        print("...........++++++............")
 
 if __name__ == "__main__":
     main()
