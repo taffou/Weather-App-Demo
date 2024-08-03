@@ -8,7 +8,6 @@ print(f"{format_output}---START---{format_reset}")
 
 # ? - importing necessary modules
 
-import data as d
 import fetch_data as fd
 import messages as msg
 
