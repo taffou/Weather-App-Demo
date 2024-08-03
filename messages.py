@@ -8,7 +8,7 @@ def welcome():
     print("Demo cities to choose from --- London - New York - Tokyo - Sydney - Paris ---")
 
 # * Goodby message subroutine
-def thank_msg():
-    print("Thank you for using our Application")
+def goodbye():
+    print("Thank you for using our Application!")
 
 

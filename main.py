@@ -1,51 +1,50 @@
-# Formatting Variables
 
+# Formatting Variables
 format_output = "\033[47m\033[30m"
 format_reset = "\033[0m"
 
-# Formatted Message - Signify Start of Output
+# * Formatted Message - Signify Start of Output
 print(f"{format_output}---START---{format_reset}")
 
 # ? - importing necessary modules
 
-import welcome_msg as wmsg
+import data as d
 import fetch_data as fd
-# import subprocess as sup
+import messages as msg
 
 def main():
-# ? 1- Welcome message
-# * Welcome the user 
-    wmsg.welcome()
-
-# ? 2- Fetching Weather Data 
-    # city = sup.run([input("Enter a city name!")], stdout=sup.PIPE, text=True)
-    city = input("Enter a city name!")
-    # fd.weather_info()
-
-# ? 3- Display Weather Data
-# * Display Data by requested city
-    # fd.weather_city(city.capitalize())
-    fd.weather_city(city.title())
+    fd.weather_info()
+    try:
+        # ? 1.1- Welcome message     
+        print("...........................................++++++..............................................")
+        # ? 1.2- Welcome message
+        msg.welcome()
+        print("...........................................++++++..............................................")
+        while True:
+            # ? 1.3- Fetching Weather Data 
+            city = input("Enter a city name!")
+            # ? 1.4- Display city weather Data 
+            isCity = fd.weather_city(city.title())
+            while isCity == False:
+                city = input("Enter a valid city name!")
+                isCity = fd.weather_city(city.title())
+            print("...........................................++++++..............................................")
+            user_input = input("Press Any key to continue or \"E\" to exit the App")
+            print("....................++++++.....................")
+            if user_input.capitalize() == "E":
+                msg.goodbye()
+                print("...........................................++++++..............................................")
+                break
+    except Exception as e:
+        print(f"An error occured: {e}")
+    else:
+        print("Accurate App")
+    finally: 
+        print("Reload...")
+        print("...........++++++............")
 
 if __name__ == "__main__":
     main()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Formatted Message - Signify END of Output
+# * Formatted Message - Signify END of Output
 print(f"{format_output}---END---{format_reset}")
